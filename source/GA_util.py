@@ -100,6 +100,12 @@ def mutation(p,reference,mutation_rate):
 
 
 def tournament_selection(pop,scores,t_size=3):
+    ''' turnament selection algorithm based on https://en.wikipedia.org/wiki/Tournament_selection
+        param: 
+            pop:        population vector
+            scores:     scores vector
+            t_size:     turnamnament size
+    '''
 
     # randomly select t_size chromosomes/ individuals from the pop for the tunament
     sel_idx = random.choices(range(len(pop)),k = t_size)
