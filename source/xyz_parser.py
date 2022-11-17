@@ -3,9 +3,9 @@ import pandas as pd
 #===============================================================================================
 
 def XYZ_reader(fname):
-    ''' A PSF parser
+    ''' A XYZ parser
     param:
-        fname :     full or relative file path of the pdb to be read
+        fname :     full or relative file path of the xyz to be read
     '''
 
     # open the psf file

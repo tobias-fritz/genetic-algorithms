@@ -1,11 +1,29 @@
 
+#!/usr/bin/env python3
+#===============================================================================================
+# Script for scoring the atom indexing in xyz files of two at the very least isomeric structures
+# using a genetic algorithm to reduce computational cost compared to brute force approach
+# Date: 30.05.2022
+# Author: Tobias Fritz
+# Summary:
+# Based on a previous atom mapping appraoch using permutation Reads two xyz files that have to 
+# at the very least have the same molecular formulae. E.g. Structures of product and educt. 
+# Based on the pairwise distance matrix the indexing of the two structures is compared to map 
+# atoms of e.g. the educt to the corresponding atom in the product structure. 
+#===============================================================================================
 
 from source.pairwise_distance_matrix import pairwise_distance_matrix
 from source.GA_util import init_pop, objective, tournament_selection, mutation, crossover
 from source.xyz_parser import XYZ_reader
 
+#===============================================================================================
 
 def genetic_atom_mapping(educt_path,product_path,n_generations,pop_size,cross_rate,mut_rate):
+    '''
+    
+    
+    
+    '''
 
     product_xyz = XYZ_reader(product_path)
 

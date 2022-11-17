@@ -75,6 +75,7 @@ def update_best(gen,pop,scores,best,best_eval):
 def mutation(p,reference,mutation_rate):
     ''' Mutate a permutation vector at a number of positions by randomly selecting
         from the reference at each position 
+        
         param:
             p:              permuattion vector to permute
             reference:      list with possible indices at each position
@@ -120,3 +121,25 @@ def tournament_selection(pop,scores,t_size=3):
 
     return list(t_pop[t_scores.index(sorted_scores[0])])
 
+def crossover(p1, p2, r_cross):
+    ''' Crossover implementation
+        param: 
+            p1:         parent 1
+            p2:         parent 2
+            r_cross:    crossover rate
+    '''
+
+	# children are copies of parents by default
+    c1, c2 = p1.copy(), p2.copy()
+
+	# check for recombination
+    if np.random.rand() < r_cross:
+
+        # select crossover point that is not on the end of the string
+        pt = np.random.randint(1, len(p1)-2)
+
+		# perform crossover
+        c1 = p1[:pt] + p2[pt:]
+        c2 = p2[:pt] + p1[pt:]
+
+    return [c1, c2]
