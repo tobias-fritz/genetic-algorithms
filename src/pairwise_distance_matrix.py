@@ -1,7 +1,8 @@
 
-from scipy.spatial.distance import cdist
 import pandas as pd
 from numpy import inf
+from scipy.spatial.distance import cdist
+
 
 #===============================================================================================
 
